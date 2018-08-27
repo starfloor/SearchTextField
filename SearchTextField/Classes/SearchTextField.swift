@@ -148,16 +148,7 @@ open class SearchTextField: UITextField {
     fileprivate var maxTableViewSize: CGFloat = 0
     
     fileprivate var filteredResults = [SearchTextFieldItem]()
-    fileprivate var filterDataSource = [SearchTextFieldItem]() {
-        didSet {
-            filter(forceShowAll: forceNoFiltering)
-            buildSearchTableView()
-            
-            if startVisibleWithoutInteraction {
-                textFieldDidChange()
-            }
-        }
-    }
+    fileprivate var filterDataSource = [SearchTextFieldItem]()
     
     fileprivate var currentInlineItem = ""
     
